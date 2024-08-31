@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animație CSS</title>
+    <style>
+        /* Stilizare generală pentru body */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #050210;
+            overflow: hidden;
+            filter: blur(3px);
+            
+
+        }
+
+       
+        .outer_circle { 
+            position: absolute; 
+            margin: 50px; 
+            width: 300px; 
+            height: 300px; 
+            border-radius: 50%; 
+            background: #050210; 
+            
+           
+        } 
+          
+        .inner_circle { 
+            background-image: linear-gradient(#fb5dad 0%, #55fb9f 50%, #b97aff 100%); 
+            content: ''; 
+            position: absolute; 
+            top: -20px; 
+            bottom: -20px; 
+            right: -20px; 
+            left: -20px; 
+            z-index: -1; 
+            border-radius: inherit; 
+            animation: rotate 1.5s infinite linear;
+            box-shadow: 0 0 40px 15px whitesmoke;  
+            justify-content: center;
+            
+        } 
+       
+       
+        .inner_circle::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            background: linear-gradient(#fb5dad 0%, #55fb9f 50%, #b97aff 100%);
+            border-radius: 50%;
+            z-index: -1;
+        }
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+
+      
+        
+    </style>
+</head>
+<body>
+    <div class="outer_circle"> 
+        <div class="inner_circle"></div> 
+        <div class="outer_circle2"> 
+            <div class="inner_circle2"></div>
+</body>
+</html>
